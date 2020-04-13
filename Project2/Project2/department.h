@@ -10,11 +10,17 @@ private:
 
 public:
 	void set_Dname(string n);
+
 		string get_Dname();
+
 		void set_manager(string m);
+
 		string get_manager();
+
 		void set_DID(int d);
+
 		int get_DID();
+
 
 
 };

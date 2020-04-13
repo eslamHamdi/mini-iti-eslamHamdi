@@ -1,4 +1,8 @@
 #include "employee.h"
+#include "department.h"
+#include <iostream>
+#include <string>
+using namespace std;
 
 void employee::set_name(string n)
 {
@@ -39,3 +43,12 @@ int employee::get_age()
 {
 	return age;
 }
+
+
+
+
+
+
+
+
+

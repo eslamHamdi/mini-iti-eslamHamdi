@@ -1,4 +1,8 @@
 #include "department.h"
+#include "employee.h"
+#include <iostream>
+#include <string>
+using namespace std;
 
 void department::set_Dname(string n)
 {
@@ -13,7 +17,7 @@ string department::get_Dname()
 
 void department::set_manager(string m)
 {
-	manager_name = m;
+	manager_name= m;
 }
 
 string department::get_manager()
@@ -30,3 +34,12 @@ int department::get_DID()
 {
 	return departmentID;
 }
+
+
+
+
+
+
+
+
+
