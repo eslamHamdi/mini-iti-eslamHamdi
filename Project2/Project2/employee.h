@@ -19,6 +19,5 @@ public:
 	void set_age(int g);
 	int get_age();
 	
-
 };
 

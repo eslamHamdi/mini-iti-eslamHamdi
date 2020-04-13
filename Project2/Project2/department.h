@@ -21,7 +21,5 @@ public:
 
 		int get_DID();
 
-
-
 };
 
