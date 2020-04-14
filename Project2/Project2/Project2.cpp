@@ -7,24 +7,22 @@
 #include "employee.h"
 using namespace std;
 
-void option1(string n, string m, int d, int dep[], int& departmentnumber);
+void option1(string n, string m, int d, department dep[], int& departmentnumber);
 
- void option2(string Ename, string en[], float salary, int ed, int E[], int age, int& employeenumber);
+ void option2(string Ename, float salary, int ed, int age, employee E[], int& employeenumber);
 
-void option3(string s, string en[], int c, int E[], int employeenumber);
+void option3(string s, employee E[], int c, int employeenumber);
  
 
-void option4(int dep[], int E[], int employeenumber, int departmentnumber);
+void option4(department dep[], employee E[], int employeenumber, int departmentnumber);
 
 int departmentnumber = 0;
 int employeenumber = 0;
-int dep[50];
-int E[1000];
-string en[1000];
-int op;
-string m,Ename, n , s;
+employee E[500];
+department dep[10];
+string n, m , Ename , s ;
+int op ,d ,ed , age , c;
 float salary;
-int  ed,age,d,c;
 
 int main()
 {
@@ -50,14 +48,14 @@ int main()
 
         else if (op == 2) {
 
-            option2(Ename, en, salary, ed, E, age, employeenumber);
+            option2(Ename, salary, ed, age, E , employeenumber);
 
 
         }
 
         else if (op == 3) {
 
-            option3(s, en, c, E, employeenumber);
+            option3(s, E, c, employeenumber);
 
 
         }
@@ -81,71 +79,66 @@ int main()
 
     return 0;
 }
-void option1(string n, string m, int d, int dep[], int& departmentnumber)
+void option1(string n, string m, int d, department dep[], int& departmentnumber)
 {
-    department a;
-
+    
     cout << "enter department name" << endl;
 
     cin >> n;
-    a.set_Dname(n);
+    dep[departmentnumber].set_Dname(n);
 
     cout << "enter manager name" << endl;
 
     cin >> m;
-    a.set_manager(m);
+    dep[departmentnumber].set_manager(m);
 
     cout << "enter department id" << endl;
 
     cin >> d;
-    a.set_DID(d);
-
-    dep[departmentnumber] = a.get_DID();
+    dep[departmentnumber].set_DID(d);
 
     departmentnumber++;
 
 }
-void option2(string Ename, string en[], float salary, int ed, int E[], int age, int& employeenumber)
+void option2(string Ename, float salary, int ed, int age, employee E[], int& employeenumber)
 {
-    employee e;
+   
     cout << "enter employee name" << endl;
 
     cin >> Ename;
-    e.set_name(Ename);
-    en[employeenumber] = e.get_name();
+    E[employeenumber].set_name(Ename);
 
     cout << "enter salary" << endl;
 
     cin >> salary;
-    e.set_salary(salary);
+    E[employeenumber].set_salary(salary);
 
     cout << "enter department id" << endl;
 
     cin >> ed;
-    e.set_employee_department(ed);
-    E[employeenumber] = e.get_employee_department();
+    E[employeenumber].set_employee_department(ed);
 
     cout << "enter age" << endl;
 
     cin >> age;
-    e.set_age(age);
+    E[employeenumber].set_age(age);
 
     employeenumber++;
 }
 
-void option3(string s, string en[], int c, int E[], int employeenumber)
+void option3(string s, employee E[], int c, int employeenumber)
 {
     cout << "enter employee name" << endl;
 
     cin >> s;
     for (int i = 0; i < employeenumber; i++)
 
-        if (s == en[i])
+        if (s == E[employeenumber].get_name())
         {
             cout << "enter department id" << endl;
 
             cin >> c;
-            E[i] = c;
+            E[employeenumber].set_employee_department(c);
         }
         else {
             cout << "wrong name" << endl;
@@ -153,7 +146,7 @@ void option3(string s, string en[], int c, int E[], int employeenumber)
 
 }
 
-void option4(int dep[], int E[], int employeenumber, int departmentnumber)
+void option4(department dep[], employee E[], int employeenumber, int departmentnumber)
 {
     for (int i = 0; i < departmentnumber; i++)
     {
@@ -161,12 +154,12 @@ void option4(int dep[], int E[], int employeenumber, int departmentnumber)
         for (int j = 0; j < employeenumber; j++)
         {
 
-            if (dep[i] == E[j])
+            if (dep[i].get_DID() == E[j].get_employee_department())
             {
                 cnt++;
             }
         }
-        cout << "department " << "  " << dep[i] << "  " << "has " << cnt << "  " << "employees" << endl;
+        cout << "department " << "  " << dep[i].get_DID() << "  " << "has " << cnt << "  " << "employees" << endl;
     }
 
 }
