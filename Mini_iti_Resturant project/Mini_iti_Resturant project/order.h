@@ -1,12 +1,13 @@
 #pragma once
 #include "meal.h"
+#include "vector"
 class order
 {
 private:
-	int orderId, BranchId ,mealnumber;
+	int orderId, BranchId ;
 	string customerId;
 	float  price , discount;
-	meal list[100];
+	vector<meal> list;
 
 public:
 
@@ -25,6 +26,7 @@ public:
 	void get_list();
 
 	order();
+	
 
 }; 
 

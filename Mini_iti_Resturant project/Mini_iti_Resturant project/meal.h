@@ -18,8 +18,9 @@ public:
 	float get_price();
 	string get_name();
 
-	meal();
+	
 	meal(int i, float p, string n);
+	meal();
 
 };
 

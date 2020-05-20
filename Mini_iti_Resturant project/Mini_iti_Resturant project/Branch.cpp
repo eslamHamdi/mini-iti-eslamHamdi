@@ -13,10 +13,8 @@ void Branch::set_blocknumber(int b)
 void Branch::set_orderlist(order a)
 {
 	
-		orderlist[ordernumber] = a;
-	
-		ordernumber++;
-	
+		orderlist.push_back(a);
+		
 }
 
 int Branch::get_id()
@@ -31,7 +29,7 @@ int Branch::get_blocknumber()
 
 void Branch::get_orderlist()
 {
-	for (int i = 0; i < ordernumber; i++)
+	for (int i = 0; i < orderlist.size(); i++)
 	{
 		cout << orderlist[i].get_branchid() << "  " << orderlist[i].get_customerid() << "  " << orderlist[i].get_price() << "  " << orderlist[i].get_discount() << endl;
 		orderlist[i].get_list();
@@ -40,7 +38,3 @@ void Branch::get_orderlist()
 }
 
 
-
-Branch::Branch():ordernumber(0)
-{
-}

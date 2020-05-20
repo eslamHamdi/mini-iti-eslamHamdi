@@ -30,11 +30,13 @@ string meal::get_name()
 	return name;
 }
 
-
-meal::meal():mealId(0) , price(0)
+meal::meal(int i, float p, string n) : mealId(i), price(p), name(n)
 {
 }
 
-meal::meal(int i, float p, string n): mealId(i) , price(p) , name(n)
+meal::meal()
 {
 }
+
+
+

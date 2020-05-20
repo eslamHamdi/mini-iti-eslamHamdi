@@ -6,19 +6,20 @@
 #include "customer.h"
 #include "meal.h"
 #include "order.h"
+#include <vector>
 using namespace std;
 void menu();
-void option1(meal list[], int& mealnumber);
-void option2(customer c[] , int& customernumber);
+void option1(vector<meal>&, int& mealnumber);
+void option2(vector<customer>&, int& customernumber);
 void option3();
-void option4(Branch b[], int& Bnumber);
-void option5(order o[], meal list[], Branch br[], int mealnumber, int customerNumber, int Bnumber, int& ordernum);
-void option6(Branch b[],int Bnum);
+void option4(vector<Branch>&, int& Bnumber);
+void option5(vector<order>&, vector<meal>&, vector<Branch>&, int mealnumber, int customerNumber, int Bnumber, int& ordernum);
+void option6(vector<Branch>&,int Bnum);
 
-meal L[50];
-customer c[1000];
-Branch br[100];
-order o[10000];
+vector<meal> L;
+vector<customer> c;
+vector<Branch> br;
+vector<order> o;
 int mealnum,customerNumber ,Bnumber , ordernumber;
 int main()
 {

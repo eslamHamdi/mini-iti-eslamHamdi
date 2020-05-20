@@ -22,6 +22,8 @@ public:
 	string get_name();
 
 	customer();
+	
+
 
 };
 

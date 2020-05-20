@@ -29,8 +29,8 @@ void order::set_discount(float d)
 void order::set_list(meal m)
 {
 	
-		list[mealnumber] = m;
-		mealnumber++;
+		list.push_back(m);
+	
 	
 }
 
@@ -61,15 +61,16 @@ float order::get_discount()
 
 void order::get_list()
 {
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < list.size(); i++)
 	{
 		cout << list[i].get_mealid() << "  " << list[i].get_name() << "    "<< list[i].get_price()<< endl;
 	}
 	
 }
 
-order::order():mealnumber(0)
+order::order()
 {
 }
+
 
 

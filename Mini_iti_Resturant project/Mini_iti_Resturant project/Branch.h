@@ -1,12 +1,13 @@
 #pragma once
 #include <iostream>
 #include "order.h"
+#include "vector"
 using namespace std;
 class Branch
 {
 private:
-	int ID,BlockNumber , ordernumber;
-	order orderlist[1000];
+	int ID, BlockNumber;
+	vector<order> orderlist;
 
 public:
 
@@ -18,7 +19,6 @@ public:
 	int get_blocknumber();
 	void get_orderlist();
 
-	Branch();
 
 
 };
